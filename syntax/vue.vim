@@ -50,6 +50,8 @@ let s:languages = [
       \ {'name': 'less',       'tag': 'style'},
       \ {'name': 'pug',        'tag': 'template', 'attr_pattern': s:attr('lang', '\%(pug\|jade\)')},
       \ {'name': 'slm',        'tag': 'template'},
+      \ {'name': 'graphql',    'tag': 'page-query', 'attr_pattern': ''},
+      \ {'name': 'graphql',    'tag': 'static-query', 'attr_pattern': ''},
       \ {'name': 'handlebars', 'tag': 'template'},
       \ {'name': 'haml',       'tag': 'template'},
       \ {'name': 'typescript', 'tag': 'script', 'attr_pattern': '\%(lang=\("\|''\)[^\1]*\(ts\|typescript\)[^\1]*\1\|ts\)'},
@@ -106,7 +108,7 @@ for s:language in s:languages
   endif
 endfor
 
-syn region  vueSurroundingTag   contained start=+<\(script\|style\|template\)+ end=+>+ fold contains=htmlTagN,htmlString,htmlArg,htmlValue,htmlTagError,htmlEvent
+syn region vueSurroundingTag contained fold matchgroup=htmlTag start=+<+ end=+>+ contains=htmlTagN,htmlString,htmlArg,htmlValue,htmlTagError,htmlEvent
 syn keyword htmlSpecialTagName  contained template
 syn keyword htmlArg             contained scoped ts
 syn match   htmlArg "[@#v:a-z][-:.0-9_a-z]*\>" contained

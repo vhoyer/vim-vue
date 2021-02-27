@@ -21,6 +21,8 @@ let s:languages = [
       \   { 'name': 'css', 'pairs': ['<style', '</style>'] },
       \   { 'name': 'coffee', 'pairs': ['<script lang="coffee"', '</script>'] },
       \   { 'name': 'javascript', 'pairs': ['<script', '</script>'] },
+      \   { 'name': 'graphql', 'pairs': ['<page-query', '</page-query>'] },
+      \   { 'name': 'graphql', 'pairs': ['<static-query', '</static-query>'] },
       \ ]
 
 for s:language in s:languages
